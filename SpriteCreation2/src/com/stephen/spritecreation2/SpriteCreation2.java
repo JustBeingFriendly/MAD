@@ -21,8 +21,6 @@ public class SpriteCreation2 extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		
-		
 		class AnimationView extends SurfaceView implements Runnable, SurfaceHolder.Callback{
 			
 			Thread animation = null;
@@ -65,9 +63,6 @@ public class SpriteCreation2 extends Activity {
 				
 			}
 			
-			
-			
-			
 			int xPos = 0;
 			int yPos = 0;
 			
@@ -80,27 +75,22 @@ public class SpriteCreation2 extends Activity {
 					
 					synchronized(holder)
 					{
-						canvas = holder.lockCanvas();
-						
-								
+						canvas = holder.lockCanvas();								
 						canvas.scale(1, 1);
 						canvas.drawColor(Color.BLACK);
 						canvas.drawBitmap(spaceShip, xPos, yPos, null);
 						xPos+=5;
 						yPos+=5;
-						
-						
-						
 					}
 					
-					try 
-					{
-						Thread.sleep(40);
-					}
-					catch(InterruptedException e)
-					{
-						e.printStackTrace();
-					}
+//					try 
+//					{
+//						Thread.sleep(40);
+//					}
+//					catch(InterruptedException e)
+//					{
+//						e.printStackTrace();
+//					}
 					holder.unlockCanvasAndPost(canvas);
 					
 				}
